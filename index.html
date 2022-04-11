@@ -10,6 +10,7 @@
         .card           {border: 1px solid black;}
         output          {font-size: 0.8em;}
     </style>
+     <script src="js/script.js" defer></script>
 </head>
 <body>
     <header id="main-header" class="bg-dark text-white p-4 mb-3">
@@ -46,7 +47,8 @@
                             <option value="Sales">Sales</option>
                         </select><br>
         
-                        <input type="submit" class="btn btn-dark" value="Add Employee">
+                        <input type="submit" id="submit" class="btn btn-dark" value="Add Employee">
+                        <input type="button" id="reset_form" value="Reset" class="btn btn-primary">
                     </form>
                 </div>
             </div>
@@ -68,6 +70,6 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
+   
 </body>
 </html>
