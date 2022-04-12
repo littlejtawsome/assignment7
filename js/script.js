@@ -26,45 +26,58 @@ form.addEventListener('submit', (e) => {
        
     // GET THE VALUES FROM THE TEXT BOXES
 
-
-    //add 'list-group-item'class to emement
-
-    const $ = (id) => document.getElementById(id)
-    let id = $('id')
-    let name = $('name')
-    let ext = $('extension')
-    let email = $('email')
-    let department = $('department') 
-    let submitBtn = $('submit')
+    // const $ = (id) => document.getElementById(id).value;
+    let id =   document.getElementById('id').value;
+    let name = document.getElementById('name').value;
+    let extension = document.getElementById('extension').value;
+    let email =  document.getElementById('email').value;
+    let department =  document.getElementById('department').value;
+    let form=  document.getElementById('addForm').value;
                
-    id = id.value;
-    name = name.value;
-    ext = ext.value;
-    email = email.value;
-    department = department.value;
-    submitBtn = submit.value
+    // id = id.value;
+    // name = name.value;
+    // ext = ext.value;
+    // email = email.value;
+    // department = department.value;
+    // submitBtn = submit.value
         
     // INSERT A NEW ROW AT THE END OF THE EMPLOYEES TABLE
-    const table = document.getElementById('employees');
-    let newRow = table.insertRow();
+    let newRow = employTable.insertRow();
           
   // INSERT A CELL FOR EACH ITEM WITHIN THE NEW ROW
                     //새 행에 cell 추가
-    const newCellid = newRow.insertCell(0);
-    const newCellname = newRow.insertCell(1);
-    const newCellextension = newRow.insertCell(2);
-    const newCellemail = newRow.insertCell(3);
-    const newCelldepartment = newRow.insertCell(4);
-    // const newCellDel = newRow.insertCell(5);
+     let newCellid =   newRow.insertCell();
+     let newCellname = newRow.insertCell();
+     let newCellextension = newRow.insertCell();
+     let newCellemail = newRow.insertCell();
+     let newCelldepartment = newRow.insertCell();
+     let newCellDelBtn = newRow.insertCell(); //Delete 버튼도 추가해서 만들자
 
    // APPEND THE TEXT VALUES AS TEXT NODES WITHIN THE CELLS
-          //cell 에 텍스트 추가
-    newCellid.innerText = $('id').value
-    newCellname.innerText = $('name').value
-    newCellextension.innerText = $('extension').value
-    newCellemail.innerText = $('email').value
-    newCelldepartment.innerText = $('department').value
+          //cell 안에 들어갈 텍스트열 만들기 추가
+     let textId =   document.createTextNode(id);
+     let textName = document.createTextNode(name);
+     let textExtension = document.createTextNode(extension);
+     let textEmail = document.createTextNode(email);
+     let textDepartment = document.createTextNode(department);
+    
+    // newCellid.appendChild(textID) = $('id').value
+    // newCellname.innerText = $('name').value
+    // newCellextension.innerText = $('extension').value
+    // newCellemail.innerText = $('email').value
+    // newCelldepartment.innerText = $('department').value
   
+       newCellid.appendChild(textId);
+       newCellname.appendChild(textName);
+       newCellextension.appendChild(textExtension);
+       newCellemail.appendChild(textEmail);
+       newCelldepartment.appendChild(textDepartment);
+     
+    //  let newCellname = newRow.insertCell();
+    //  let newCellextension = newRow.insertCell();
+    //  let newCellemail = newRow.insertCell();
+    //  let newCelldepartment = newRow.insertCell();
+    //  let newCellDelBtn 
     // CREATE THE DELETE BUTTON
      let delBtn = document.createElement('button')
     // RESET THE FORM
