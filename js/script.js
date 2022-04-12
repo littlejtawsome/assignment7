@@ -1,14 +1,17 @@
+
 // GET ADD EMPLOYEE FORM AND EMPLOYEE TABLE FROM THE DOM
    let form = document.querySelector('#addForm');
-   let formControl = document.getElementsByClassName('fomr-control')   
-  //  window.console.log(form);
+   let employTable = document.getElementById('employees');
+     //  window.console.log(form);
+     //  window.console.log(employTable);
 
 // SET A COUNT VARIABLE TO DISPLAY NEXT TO EMPLOYEES HEADER
 
-    let employees = document.getElementById('submit');
-    for (let i = 1; i <= submit.length; i++){
-      let empCount = submit.value;
-    }
+    let empCount = document.getElementById('empCount');
+     //  let CountNumber = document.createTextNode(employTable[i].value);
+    // for (let i = 1; i <= submit.length; i++){
+    //   let empCount = submit.value;
+    // }
     // window.display(empCount);
    
     
@@ -17,14 +20,14 @@
     
 // ADD EMPLOYEE
 form.addEventListener('submit', (e) => {
-    
+    "use strict";
     // PREVENT FORM SUBMISSION
   event.preventDefault();
        
     // GET THE VALUES FROM THE TEXT BOXES
 
 
-         //add 'list-group-item'class to emement
+    //add 'list-group-item'class to emement
 
     const $ = (id) => document.getElementById(id)
     let id = $('id')
