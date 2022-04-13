@@ -43,6 +43,7 @@ form.addEventListener('submit', (e) => {
         
     // INSERT A NEW ROW AT THE END OF THE EMPLOYEES TABLE
     let newRow = employTable.insertRow();
+    empCount.value = employTable.rows.length-1;
           
   // INSERT A CELL FOR EACH ITEM WITHIN THE NEW ROW
                     //새 행에 cell 추가
@@ -78,14 +79,45 @@ form.addEventListener('submit', (e) => {
     //  let newCellemail = newRow.insertCell();
     //  let newCelldepartment = newRow.insertCell();
     //  let newCellDelBtn 
+
+
     // CREATE THE DELETE BUTTON
-     let delBtn = document.createElement('button')
+     let delBtn = document.createElement('button');
+     let textDelete = document.createTextNode('Del');
+     delBtn.appendChild(textDelete);
+     delBtn.className = 'btn bg-danger text-white';
+     newCellDelBtn.appendChild(delBtn);
+
+
+
     // RESET THE FORM
-
+     addForm.reset();
     // SET FOCUS BACK TO THE ID TEXT BOX
-
+     addForm.id.focus();
+    
+    
     // INCREMENENT THE NUMBER OF EMPLOYEES IN THE TABLE
 
+    //   function count() {
+    //     for (let i = 1; i < empTable.rows.length; i++) {
+    //     empTable[i-1].value;   
+    //     }
+    // }
+
+    // let parentoutput = window.opener.document.getElementById('loginDetails');
+    // let countText = document.createTextNode(count.innerText);
+    // // empCount/appendChild(countText);
+    // window.console.log(countText);
 });
 
+ 
 // DELETE EMPLOYEE
+  employTable.addEventListener('click', (e) => {
+     if(confirm('DO you want to delete this line of employee?')){
+        if(e.target.classList.contains('btn')){
+          const btn = e.target;
+          btn.closest('tr').remove();
+          empCount.value = employTable.rows.length-1;
+        }
+     }
+  })
